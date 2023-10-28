@@ -1,24 +1,15 @@
 def rotate(nums: list[int], k: int):
-  i = 0
   n = len(nums)-1
   for x in range(k):
-    print('Rotate %d' % (x+1))
-    while (i <= n):
-      if (i+1) <= n:
-        t = nums[i-1]
-        nums[i-1] = nums[i]
-        nums[i] = t
-      else:
-        t = nums[n-(i-1)]
-        nums[n-(i-1)] = nums[i]
-        nums[i] = t
-      i += 1
-      print(nums)
-    i = 0  
+    for idx in range(n):
+      temp = nums[idx]
+      nums[idx] = nums[len(nums)-1]
+      nums[len(nums)-1] = temp
   return nums
 
 
 if __name__ == '__main__':
+  # Fix time limit
   nums = [1,2,3,4,5,6,7]
   k = 3
-  rotate(nums, k)
+  assert rotate(nums, k) == [5,6,7,1,2,3,4]
