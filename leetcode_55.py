@@ -14,6 +14,7 @@ def canJump(nums: list[int]):
 
 
 if __name__ == '__main__':
+  # Not Solved
   nums = [1, 0, 1, 0]
   # nums = [2,3,1,1,4] # True
   # nums = [3,2,1,0,4] # False

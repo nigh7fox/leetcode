@@ -9,7 +9,7 @@ def rotate(nums: list[int], k: int):
 
 
 if __name__ == '__main__':
-  # Fix time limit
+  # Not Solved, Fix time limit
   nums = [1,2,3,4,5,6,7]
   k = 3
   assert rotate(nums, k) == [5,6,7,1,2,3,4]
