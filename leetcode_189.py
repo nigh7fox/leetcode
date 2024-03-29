@@ -1,11 +1,16 @@
 def rotate(nums: list[int], k: int):
-  n = len(nums)-1
-  for x in range(k):
-    for idx in range(n):
-      temp = nums[idx]
-      nums[idx] = nums[len(nums)-1]
-      nums[len(nums)-1] = temp
-  return nums
+  """
+  Do not return anything, modify nums in-place instead.
+  """
+  if k == 0:
+      return
+  elif len(nums) > k:
+      nums[:] = nums[-k:] + nums[:(len(nums) - k)]
+  else:
+      for i in range(k):
+          rotation = nums[:-1]
+          rotation.insert(0, nums[-1])
+          nums[:] = rotation
 
 
 if __name__ == '__main__':
